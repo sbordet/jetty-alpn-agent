@@ -80,6 +80,7 @@
           <archive>
             <manifestEntries>
               <Premain-Class>org.mortbay.jetty.alpn.agent.Premain</Premain-Class>
+              <Agent-Class>org.mortbay.jetty.alpn.agent.Premain</Agent-Class>
             </manifestEntries>
           </archive>
         </configuration>

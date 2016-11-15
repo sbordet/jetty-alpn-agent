@@ -61,6 +61,10 @@ public final class Premain {
             new VersionMapping("1.0.0.v20120402",  1, 7, 0, 0)
     };
 
+    public static void agentmain(String args, Instrumentation inst) throws Exception {
+        premain(args, inst);
+    }
+
     public static void premain(String args, Instrumentation inst) throws Exception {
         final String artifactName;
         final VersionMapping[] mappings;

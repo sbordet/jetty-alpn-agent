@@ -6,6 +6,11 @@ support for Java 7 and 8 by loading the correct Jetty `alpn-boot`
 
 ## Usage
 
+Easiest way, that might not to work on all JVMs, is to use the `org.mortbay.jetty.alpn.agent.DynamicAgent`.
+Just invoke the `enableJettyAlpnAgent()` method before using secure connections.
+
+## Manually attaching the agent
+
 Specify the path to the agent JAR file with a `-javaagent` option:
 
 ```bash
@@ -18,7 +23,7 @@ To use NPN instead of ALPN, specify the `forceNpn=true` option:
 java -javaagent:<path/to/jetty-alpn-agent.jar=forceNpn=true ...
 ```
 
-## Using with Maven
+## Using manually attached agent with Maven
 
 Use `maven-dependency-plugin` to fetch the agent JAR and add the path to 
 the downloaded agent JAR to the command line arguments:
