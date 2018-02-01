@@ -16,7 +16,6 @@
 package org.mortbay.jetty.alpn.agent;
 
 final class VersionMapping {
-
     private final String artifactVersion;
     private final int major;
     private final int minor;

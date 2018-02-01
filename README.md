@@ -20,7 +20,13 @@ java -javaagent:<path/to/jetty-alpn-agent.jar> ...
 To use NPN instead of ALPN, specify the `forceNpn=true` option:
 
 ```bash
-java -javaagent:<path/to/jetty-alpn-agent.jar=forceNpn=true ...
+java -javaagent:<path/to/jetty-alpn-agent.jar>=forceNpn=true ...
+```
+
+To enable debug logs, specify the `debug=true` option:
+
+```bash
+java -javaagent:<path/to/jetty-alpn-agent.jar>=debug=true ...
 ```
 
 ## Using manually attached agent with Maven
@@ -72,7 +78,7 @@ the downloaded agent JAR to the command line arguments:
 For more information, please refer to the following resources:
 
 - Jetty documentation: [ALPN](http://eclipse.org/jetty/documentation/current/alpn-chapter.html) 
-and [NPN](http://eclipse.org/jetty/documentation/9.2.10.v20150310/npn-chapter.html)
+and [NPN](http://www.eclipse.org/jetty/documentation/9.2.21.v20170120/npn-chapter.html)
 - Java API documentation: [`java.lang.instrument`](https://docs.oracle.com/javase/8/docs/api/java/lang/instrument/package-summary.html)
 
 ## Legal

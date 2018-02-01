@@ -16,10 +16,22 @@
 package org.mortbay.jetty.alpn.agent;
 
 final class Util {
+    static boolean debug;
 
-    static void log(String msg) {
-        System.err.println("[jetty-alpn-agent] " + msg);
+    static void warn(String message) {
+        log(message);
     }
 
-    private Util() {}
+    static void debug(String message) {
+        if (debug) {
+            log(message);
+        }
+    }
+
+    private static void log(String message) {
+        System.err.println("[jetty-alpn-agent] " + message);
+    }
+
+    private Util() {
+    }
 }

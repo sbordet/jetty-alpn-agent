@@ -19,10 +19,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 final class JavaVersion {
-
-    private static final Pattern VERSION_PATTERN =
-            Pattern.compile("^([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:_([0-9]+))?(?:-.+)?$");
-
+    private static final Pattern VERSION_PATTERN = Pattern.compile("^([0-9]+)\\.([0-9]+)\\.([0-9]+)(?:_([0-9]+))?(?:-.+)?$");
     private static final int major;
     private static final int minor;
     private static final int micro;
@@ -33,7 +30,7 @@ final class JavaVersion {
         final Matcher m = VERSION_PATTERN.matcher(versionStr);
 
         if (!m.matches()) {
-            Util.log("Could not parse java.version: " + versionStr);
+            Util.warn("Could not parse java.version: " + versionStr);
             major = 0;
             minor = 0;
             micro = 0;
@@ -67,5 +64,6 @@ final class JavaVersion {
         return patch;
     }
 
-    private JavaVersion() {}
+    private JavaVersion() {
+    }
 }

@@ -21,7 +21,6 @@ import java.util.Arrays;
 import java.util.Map;
 
 final class ReplacingClassFileTransformer implements ClassFileTransformer {
-
     private final Map<String, byte[]> classes;
 
     ReplacingClassFileTransformer(Map<String, byte[]> classes) {
@@ -29,15 +28,13 @@ final class ReplacingClassFileTransformer implements ClassFileTransformer {
     }
 
     @Override
-    public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined,
-                            ProtectionDomain protectionDomain, byte[] classfileBuffer) {
-
+    public byte[] transform(ClassLoader loader, String className, Class<?> classBeingRedefined, ProtectionDomain protectionDomain, byte[] classfileBuffer) {
         final byte[] content = classes.get(className);
         if (content == null || Arrays.equals(content, classfileBuffer)) {
             return null;
         }
 
-        Util.log("Replacing: " + className);
+        Util.debug("Replacing: " + className);
         return content.clone();
     }
 }
