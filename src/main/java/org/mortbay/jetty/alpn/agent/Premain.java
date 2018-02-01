@@ -62,7 +62,7 @@ public final class Premain {
     };
 
     public static void agentmain(String options, Instrumentation inst) throws Exception {
-        premain(args, inst);
+        premain(options, inst);
     }
   
     public static void premain(String options, Instrumentation inst) throws Exception {
