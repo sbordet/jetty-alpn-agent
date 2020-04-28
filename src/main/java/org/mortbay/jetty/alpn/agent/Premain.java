@@ -63,6 +63,10 @@ public final class Premain {
             new VersionMapping("1.0.0.v20120402", 1, 7, 0, 0)
     };
 
+    public static void agentmain(String options, Instrumentation inst) throws Exception {
+        premain(options, inst);
+    }
+  
     public static void premain(String options, Instrumentation inst) throws Exception {
         String artifactName = "alpn-boot";
         VersionMapping[] mappings = ALPN_MAPPINGS;
